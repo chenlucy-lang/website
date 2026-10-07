@@ -1,0 +1,87 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --sidebar-width: 300px;
+  --blue: #2b5d8c;
+  --text: #111;
+  --muted: #aaa;
+  --font-body: "Courier New", Courier, monospace;
+  --font-heading: "Courier New", Courier, monospace;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--blue);
+}
+
+/* All headings use Georgia */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+}
+
+/* Fixed sidebar: full height, stays put on scroll */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: var(--sidebar-width);
+  height: 100vh;
+  padding: 64px 32px 40px;
+  background: #fff;
+  border-radius: 0 0 0 32px;
+  overflow-y: auto;
+
+  display: flex;
+  flex-direction: column;
+}
+
+/* Stamp / logo */
+.logo {
+  display: block;
+  width: 50%;
+  height: auto;
+  margin-bottom: 28px;
+}
+
+.bio {
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--muted);
+  margin-bottom: 28px;
+}
+
+.info {
+  margin-bottom: 24px;
+}
+
+.info h3 {
+  font-size: 15px;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+
+.value {
+  font-size: 15px;
+  line-height: 1.4;
+  color: var(--muted);
+}
+
+/* Image pinned to the bottom of the sidebar */
+.skyline {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-top: auto;   /* pushes it to the bottom */
+  padding-top: 32px;
+}
+
+/* Push page content to the right of the sidebar */
+.content {
+  margin-left: var(--sidebar-width);
+  min-height: 200vh; /* temporary, for testing scroll */
+}
