@@ -18,7 +18,7 @@ body {
   background: var(--blue);
 }
 
-/* All headings use Georgia */
+/* All headings: Courier New, bold */
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
   font-weight: 700;
@@ -40,16 +40,25 @@ h1, h2, h3, h4, h5, h6 {
   flex-direction: column;
 }
 
-/* Stamp / logo */
 .logo {
   display: block;
-  width: 50%;
+  width: 180px;
   height: auto;
-  margin-bottom: 28px;
+  margin-bottom: 8px;   /* was 28px */
+}
+
+.name {
+  font-family: "Arial Black", Arial, Helvetica, sans-serif;
+  font-weight: 900;
+  font-size: 38px;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: #d9482b;    /* matches the stamp */
+  margin-bottom: 24px;
 }
 
 .bio {
-  font-size: 15px;
+  font-size: 14px;
   line-height: 1.5;
   color: var(--muted);
   margin-bottom: 28px;
@@ -60,23 +69,23 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .info h3 {
-  font-size: 15px;
+  font-size: 14px;
   color: var(--text);
   margin-bottom: 4px;
 }
 
 .value {
-  font-size: 15px;
+  font-size: 14px;
   line-height: 1.4;
   color: var(--muted);
 }
 
-/* Image pinned to the bottom of the sidebar */
+/* Shanghai image pinned to the bottom of the sidebar */
 .skyline {
   display: block;
   width: 100%;
   height: auto;
-  margin-top: auto;   /* pushes it to the bottom */
+  margin-top: auto;
   padding-top: 32px;
 }
 
