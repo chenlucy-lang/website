@@ -8,31 +8,105 @@
 </head>
 <body>
 
-  <aside class="sidebar">
-    <img class="logo" src="stamp.png" alt="Lucy Chen">
-
-    <h1 class="name">lucy chen</h1>
-
-    <p class="bio">
-      is a Shanghai and Los Angeles based designer interested in curating fun experiences!
-    </p>
-
-    <div class="info">
-      <h3>@Haute Magazine</h3>
-      <p class="value">Creative Director</p>
+  <nav class="elevator" aria-label="Primary">
+    <div class="track">
+      <div class="rail"><div class="progress"></div></div>
+      <ul class="line">
+        <li style="--x: 26%">
+          <a class="stop active" href="#work" aria-current="true">
+            <span class="btn">1</span><span class="label">work</span>
+          </a>
+        </li>
+        <li style="--x: 50%">
+          <a class="stop" href="#creative">
+            <span class="btn">2</span><span class="label">creative</span>
+          </a>
+        </li>
+        <li style="--x: 74%">
+          <a class="stop" href="#about">
+            <span class="btn">3</span><span class="label">about</span>
+          </a>
+        </li>
+      </ul>
     </div>
+  </nav>
 
-    <div class="info">
-      <h3>@USC</h3>
-      <p class="value">Media Arts &amp; Tech!</p>
-    </div>
+  <div class="page">
 
-    <img class="skyline" src="Shanghai.png" alt="Shanghai">
-  </aside>
+    <!-- Left column -->
+    <aside class="sidebar">
+      <img class="home" src="home.png" alt="Lucy Chen">
 
-  <main class="content">
-    <!-- your page content goes here -->
-  </main>
+   <p class="bio">
+  is a Shanghai and Los Angeles based designer interested in curating fun&nbsp;experiences!
+</p>
+
+      <div class="info">
+        <h3>@Haute Magazine</h3>
+        <p class="value">Creative Director</p>
+      </div>
+
+      <div class="info">
+        <h3>@USC</h3>
+        <p class="value">Media Arts &amp; Tech!</p>
+      </div>
+    </aside>
+
+    <!-- Middle + right columns: one row per project -->
+    <main class="content">
+
+      <section id="work">
+        <article class="project">
+          <div class="project-text">
+            <h2 class="project-title"><span class="strong">01 Project Name</span> Subtitle</h2>
+            <p class="tags">Tag one, Tag two, Tag three</p>
+            <p class="desc">A short description of the project goes here, two or three lines long.</p>
+            <p class="year">2025</p>
+            <a class="more" href="#">See more</a>
+          </div>
+          <!-- swap the div for: <img class="project-img" src="project1.png" alt="Project name"> -->
+          <div class="project-img placeholder"></div>
+        </article>
+
+        <article class="project">
+          <div class="project-text">
+            <h2 class="project-title"><span class="strong">02 Project Name</span> Subtitle</h2>
+            <p class="tags">Tag one, Tag two, Tag three</p>
+            <p class="desc">A short description of the project goes here, two or three lines long.</p>
+            <p class="year">2026 &mdash; In Progress</p>
+            <a class="more" href="#">See more</a>
+          </div>
+          <div class="project-img placeholder"></div>
+        </article>
+      </section>
+
+      <section id="creative">
+        <article class="project">
+          <div class="project-text">
+            <h2 class="project-title"><span class="strong">03 Creative Piece</span> Subtitle</h2>
+            <p class="tags">Tag one, Tag two</p>
+            <p class="desc">A short description of the piece goes here.</p>
+            <p class="year">2025</p>
+            <a class="more" href="#">See more</a>
+          </div>
+          <div class="project-img placeholder"></div>
+        </article>
+      </section>
+
+      <section id="about">
+        <article class="project">
+          <div class="project-text">
+            <h2 class="project-title"><span class="strong">About</span></h2>
+            <p class="desc">Write a little about yourself here.</p>
+          </div>
+          <div class="project-img placeholder"></div>
+        </article>
+      </section>
+
+    </main>
+  </div>
+
+  <script src="script.js"></script>
 
 </body>
 </html>
