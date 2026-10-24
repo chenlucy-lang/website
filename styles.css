@@ -193,6 +193,20 @@ h1, h2, h3, h4, h5, h6 {
   margin-left: calc(var(--home-offset) * -1);   /* pulls the image left to line up with the text */
 }
 
+.home-link {
+  display: block;
+  width: fit-content;
+} 
+
+/* Dragon turns black and white on hover */
+.home {
+  transition: filter 0.3s ease;
+}
+
+.home-link:hover .home,
+.home-link:focus-visible .home {
+  filter: grayscale(100%);
+}
 .bio {
   font-size: 13px;
   line-height: 1.35;          /* was 1.5 */
