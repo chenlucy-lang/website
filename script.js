@@ -52,7 +52,9 @@ document.querySelector('.home-link').addEventListener('click', e => {
 const io = new IntersectionObserver(entries => {
   entries.forEach(e => {
     if (e.isIntersecting && !locked) {
-      setActive(stops.find(s => s.hash === '#' + e.target.id));
+      // Only light a floor if a button points at this section (the About page has its own button now)
+      const match = stops.find(s => s.hash === '#' + e.target.id);
+      if (match) setActive(match);
     }
   });
 }, { rootMargin: '-40% 0px -55% 0px' });

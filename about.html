@@ -3,36 +3,89 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Lucy Chen</title>
+  <title>About | Lucy Chen</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-  <aside class="sidebar">
-    <img class="logo" src="stamp.png" alt="Lucy Chen">
-
-    <h1 class="name">lucy chen</h1>
-
-    <p class="bio">
-      is a Shanghai and Los Angeles based designer interested in curating fun experiences!
-    </p>
-
-    <div class="info">
-      <h3>@Haute Magazine</h3>
-      <p class="value">Creative Director</p>
+  <nav class="elevator" aria-label="Primary">
+    <div class="track">
+      <div class="rail"><div class="progress"></div></div>
+      <ul class="line">
+        <li style="--x: 26%">
+          <a class="stop" href="index.html#work">
+            <span class="btn">1</span><span class="label">work</span>
+          </a>
+        </li>
+        <li style="--x: 50%">
+          <a class="stop" href="index.html#creative">
+            <span class="btn">2</span><span class="label">creative</span>
+          </a>
+        </li>
+        <li style="--x: 74%">
+          <a class="stop active" href="about.html#about" aria-current="true">
+            <span class="btn">3</span><span class="label">about</span>
+          </a>
+        </li>
+      </ul>
     </div>
+  </nav>
 
-    <div class="info">
-      <h3>@USC</h3>
-      <p class="value">Media Arts &amp; Tech!</p>
-    </div>
+  <div class="page">
 
-    <img class="skyline" src="Shanghai.png" alt="Shanghai">
-  </aside>
+    <!-- Left column -->
+    <aside class="sidebar">
+      <a class="home-link" href="index.html#work" aria-label="Back to work">
+        <img class="home" src="home.png" alt="Lucy Chen">
+      </a>
 
-  <main class="content">
-    <!-- your page content goes here -->
-  </main>
+      <p class="bio">
+        is a Shanghai and Los Angeles based designer interested in curating fun experiences!
+      </p>
+
+      <div class="info">
+        <h3>@Haute Magazine</h3>
+        <p class="value">Creative Director</p>
+      </div>
+
+      <div class="info">
+        <h3>@USC</h3>
+        <p class="value">Media Arts &amp; Tech!</p>
+      </div>
+    </aside>
+
+    <!-- About content: text column | photos -->
+    <main class="content">
+
+      <section id="about" class="about-section">
+        <article class="about">
+
+          <div class="about-text">
+            <p class="eyebrow">Time in Shanghai: <span id="shanghai-time">--:--:--</span></p>
+            <h1 class="about-title">Who am I?</h1>
+
+            <p>Shanghai-born and raised. I&rsquo;m currently pursuing a degree in Media Arts and Practice at the School of Cinematic Arts at USC.</p>
+
+            <p>I love making fun and cute things! I first got into design when I picked up a pen in Procreate and started desginging graphics for my school&rsquo;s Varsity sports teams!</p>
+
+            <p>When I&rsquo;m not sitting at my laptop tinkering on Photoshop, I&rsquo;m listening to corny romance songs, lifting, or rock climbing.</p>
+          </div>
+
+          <!-- Photo placeholders. To use a real photo, put an <img> inside a box:
+               <div class="photo photo-a placeholder"><img src="about1.jpg" alt="Lucy Chen"></div> -->
+          <div class="about-photos">
+            <div class="photo photo-a"><img src="me.JPG" alt="Lucy Chen"></div>
+            <div class="photo photo-b"><img src="haute.jpeg" alt="Haute Magazine"></div>
+            <div class="photo photo-c"><img src="descent.jpg" alt="Descent"></div>
+          </div>
+
+        </article>
+      </section>
+
+    </main>
+  </div>
+
+  <script src="about.js"></script>
 
 </body>
 </html>
