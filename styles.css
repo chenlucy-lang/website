@@ -454,3 +454,47 @@ h1, h2, h3, h4, h5, h6 {
   text-shadow: 0 0 6px rgba(19, 86, 255, 0.55),         /* soft glow */
                0 0 14px rgba(19, 86, 255, 0.25);
 }
+
+/* ---------- Photo hover captions ---------- */
+
+:root {
+  --caption: #5ab4f0;   /* caption text color (light blue, same as the cursor) */
+}
+
+/* The other photos fade while you hover one */
+.photo {
+  transition: opacity 0.25s ease;
+}
+
+.photo.dim {
+  opacity: 0.25;
+}
+
+/* Caption box that follows the cursor */
+.photo-caption {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 20;
+  width: max-content;
+  max-width: 300px;
+  padding: 10px 14px;
+  background: #fff;
+  border: 1.5px solid #e6e6e6;
+  border-radius: 4px;
+  color: var(--caption);
+  font-size: 16px;
+  line-height: 1.25;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.15s ease;
+}
+
+.photo-caption.show {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .photo,
+  .photo-caption { transition: none; }
+}

@@ -95,3 +95,45 @@ if (clock) {
 
   tick();
 }
+
+/* ---------- Photo captions on hover ---------- */
+const photos = [...document.querySelectorAll('.photo[data-caption]')];
+
+if (photos.length) {
+  // One caption box that follows the cursor
+  const tip = document.createElement('div');
+  tip.className = 'photo-caption';
+  tip.setAttribute('aria-hidden', 'true');
+  document.body.appendChild(tip);
+
+  const OFFSET = 18;   // distance from the cursor
+  const EDGE   = 12;   // keep this far from the screen edges
+
+  const place = (x, y) => {
+    const w = tip.offsetWidth;
+    const h = tip.offsetHeight;
+    let left = x + OFFSET;
+    let top  = y + OFFSET;
+    if (left + w > window.innerWidth  - EDGE) left = x - OFFSET - w;   // flip to the left of the cursor
+    if (top  + h > window.innerHeight - EDGE) top  = y - OFFSET - h;   // flip above the cursor
+    tip.style.left = Math.max(EDGE, left) + 'px';
+    tip.style.top  = Math.max(EDGE, top)  + 'px';
+  };
+
+  photos.forEach(photo => {
+    photo.addEventListener('mouseenter', e => {
+      tip.textContent = photo.dataset.caption;
+      place(e.clientX, e.clientY);
+      tip.classList.add('show');
+      // Fade the other photos
+      photos.forEach(p => p.classList.toggle('dim', p !== photo));
+    });
+
+    photo.addEventListener('mousemove', e => place(e.clientX, e.clientY));
+
+    photo.addEventListener('mouseleave', () => {
+      tip.classList.remove('show');
+      photos.forEach(p => p.classList.remove('dim'));
+    });
+  });
+}
