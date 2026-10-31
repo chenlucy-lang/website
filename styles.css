@@ -498,3 +498,13 @@ h1, h2, h3, h4, h5, h6 {
   .photo,
   .photo-caption { transition: none; }
 }
+
+/* Links inside the about text: same color, underlined, blue on hover */
+.about-text a {
+  color: inherit;
+  text-decoration: underline;
+}
+
+.about-text a:hover {
+  color: var(--line);
+}
