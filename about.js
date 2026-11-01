@@ -137,3 +137,31 @@ if (photos.length) {
     });
   });
 }
+
+/* ---------- Experiences: hover a role to show its photo ---------- */
+const expRows = [...document.querySelectorAll('.exp-item')];
+const expImgs = [...document.querySelectorAll('.exp-img')];
+const expHint = document.querySelector('.exp-hint');
+
+if (expRows.length) {
+  // If a photo file can't be found, drop it so the box never shows a broken image
+  expImgs.forEach(img => {
+    const drop = () => img.remove();
+    if (img.complete && img.naturalWidth === 0) drop();
+    else img.addEventListener('error', drop);
+  });
+
+  const show = key => {
+    const found = expImgs.some(img => img.isConnected && img.dataset.for === key);
+    expImgs.forEach(img => img.classList.toggle('show', img.dataset.for === key));
+    if (expHint) expHint.classList.toggle('hide', found);
+    expRows.forEach(row => row.classList.toggle('active', row.dataset.target === key));
+  };
+
+  expRows.forEach(row => {
+    row.addEventListener('mouseenter', () => show(row.dataset.target));
+    row.addEventListener('focus',      () => show(row.dataset.target));
+    row.addEventListener('mouseleave', () => show(null));
+    row.addEventListener('blur',       () => show(null));
+  });
+}

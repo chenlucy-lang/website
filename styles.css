@@ -508,3 +508,114 @@ h1, h2, h3, h4, h5, h6 {
 .about-text a:hover {
   color: var(--line);
 }
+
+/* ---------- Experiences + Communities ---------- */
+
+/* Same two columns as the About section, so the gray box lines up with the photos above */
+.experience {
+  display: grid;
+  grid-template-columns: clamp(300px, 34vw, 560px) minmax(0, 540px);
+  column-gap: var(--gap);
+  align-items: start;
+  margin-top: 80px;
+}
+
+.exp-title {
+  grid-column: 1 / -1;
+  font-size: clamp(20px, 1.6vw, 28px);
+  font-weight: 400;
+  line-height: 1.2;
+  margin-bottom: 18px;
+}
+
+/* The list runs across the gap, ending where the photos begin */
+.exp-list {
+  grid-column: 1;
+  margin-right: calc(var(--gap) * -1);
+  list-style: none;
+}
+
+.exp-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+  padding: 27px 0;
+  border-bottom: 1px solid #c4c4c4;
+  font-size: 17px;
+  line-height: 1.3;
+  outline: none;
+}
+
+.exp-role {
+  color: var(--muted);
+  text-align: right;
+  transition: color 0.2s;
+}
+
+.exp-item:hover .exp-role,
+.exp-item.active .exp-role {
+  color: var(--text);
+}
+
+.exp-item:focus-visible {
+  outline: 2px solid var(--line);
+  outline-offset: 2px;
+}
+
+/* The gray box */
+.exp-preview {
+  grid-column: 2;
+  position: relative;
+  margin-left: 13%;
+  margin-top: 12px;
+  aspect-ratio: 16 / 10;
+  background: #efefef;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+
+.exp-hint {
+  font-size: 15px;
+  transition: opacity 0.2s;
+}
+
+.exp-hint.hide {
+  opacity: 0;
+}
+
+.exp-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.exp-img.show {
+  opacity: 1;
+}
+
+@media (max-width: 800px) {
+  .experience {
+    grid-template-columns: 1fr;
+    margin-top: 56px;
+  }
+
+  .exp-list {
+    margin-right: 0;
+  }
+
+  .exp-preview {
+    margin: 24px 0 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .exp-role,
+  .exp-hint,
+  .exp-img { transition: none; }
+}
