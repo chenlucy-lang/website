@@ -165,3 +165,29 @@ if (expRows.length) {
     row.addEventListener('blur',       () => show(null));
   });
 }
+
+/* ---------- Currently Consuming: tabs ---------- */
+const ccTabs = [...document.querySelectorAll('.cc-tab')];
+const ccRows = [...document.querySelectorAll('.cc-row')];
+
+if (ccTabs.length) {
+  // The number on each tab is however many thumbnails are in its row
+  ccTabs.forEach(tab => {
+    const row = document.querySelector('#panel-' + tab.dataset.tab);
+    const count = tab.querySelector('.cc-count');
+    if (row && count) count.textContent = row.querySelectorAll('.cc-item').length;
+  });
+
+  const selectTab = name => {
+    ccTabs.forEach(tab => {
+      const on = tab.dataset.tab === name;
+      tab.classList.toggle('active', on);
+      tab.setAttribute('aria-selected', String(on));
+    });
+    ccRows.forEach(row => { row.hidden = row.id !== 'panel-' + name; });
+  };
+
+  ccTabs.forEach(tab => {
+    tab.addEventListener('click', () => selectTab(tab.dataset.tab));
+  });
+}

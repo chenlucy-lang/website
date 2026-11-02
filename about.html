@@ -113,6 +113,43 @@
             <img class="exp-img" data-for="sca"    src="sca.jpeg"    alt="USC SCA">
           </div>
         </div>
+        <!-- Currently Consuming: tabs for books, music and films -->
+        <div class="consuming">
+          <h2 class="cc-title">Currently Consuming</h2>
+
+          <div class="cc-panel">
+            <p class="cc-fav"><span class="cc-star" aria-hidden="true">&#9733;</span> - Favorites</p>
+
+            <div class="cc-tabs" role="tablist" aria-label="Currently consuming">
+              <button class="cc-tab active" type="button" role="tab" id="tab-books" aria-selected="true" aria-controls="panel-books" data-tab="books">Books <span class="cc-count">4</span></button>
+              <button class="cc-tab" type="button" role="tab" id="tab-music" aria-selected="false" aria-controls="panel-music" data-tab="music">Music <span class="cc-count">4</span></button>
+              <button class="cc-tab" type="button" role="tab" id="tab-films" aria-selected="false" aria-controls="panel-films" data-tab="films">Films <span class="cc-count">2</span></button>
+            </div>
+
+            <!-- To add a thumbnail, put an <img> inside an item (or add a new item):
+                 <li class="cc-item"><img src="invisible-cities.jpg" alt="Invisible Cities"></li>
+                 The numbers on the tabs update by themselves. -->
+            <ul class="cc-row" role="tabpanel" id="panel-books" aria-labelledby="tab-books">
+              <li class="cc-item"></li>
+              <li class="cc-item"></li>
+              <li class="cc-item"></li>
+              <li class="cc-item"></li>
+            </ul>
+
+            <ul class="cc-row cc-square" role="tabpanel" id="panel-music" aria-labelledby="tab-music" hidden>
+              <li class="cc-item"></li>
+              <li class="cc-item"></li>
+              <li class="cc-item"></li>
+              <li class="cc-item"></li>
+            </ul>
+
+            <ul class="cc-row" role="tabpanel" id="panel-films" aria-labelledby="tab-films" hidden>
+              <li class="cc-item"></li>
+              <li class="cc-item"></li>
+            </ul>
+          </div>
+        </div>
+
       </section>
 
     </main>
